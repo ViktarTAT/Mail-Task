@@ -16,8 +16,8 @@ public class Driver {
 	if (null == driver) {
 	    System.setProperty(DRIVER, DRIVER_PATH);
 	    driver = new FirefoxDriver();
-	    driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	    //driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+	    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	return driver;
     }

@@ -7,11 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends AbstractPage {
 
-    public static final String BASE_URL = "mail.ru";
+    public static final String BASE_URL = "https://mail.ru";
 
     public static final String INPUT_LOGIN = "mailbox:login";
     public static final String INPUT_PASSWORD = "mailbox:password";
     public static final String BUTTON_SUBMIT = "//label[@id='mailbox:submit']/input";
+    public static final String LINK_USER = "//i[@id='PH_user-email']";
 
     @FindBy(id = INPUT_LOGIN)
     private WebElement inputLogin;
@@ -21,6 +22,9 @@ public class LoginPage extends AbstractPage {
 
     @FindBy(xpath = BUTTON_SUBMIT)
     private WebElement buttonSubmit;
+
+    @FindBy(xpath = LINK_USER)
+    private WebElement linkLoggedInUser;
 
     public LoginPage(WebDriver driver) {
 	super(driver);
@@ -33,13 +37,13 @@ public class LoginPage extends AbstractPage {
     }
 
     public void login(String username, String password) {
-		inputLogin.sendKeys(username);
-		inputPassword.sendKeys(password);
-		buttonSubmit.click();
+	inputLogin.sendKeys(username);
+	inputPassword.sendKeys(password);
+	buttonSubmit.click();
     }
-    
+
     public String getLoggedInUserName() {
-		return linkLoggedInUser.getAttribute("content");
-	}
+	return linkLoggedInUser.getText();
+    }
 
 }

@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import by.htp.taskMail.driver.Driver;
 import by.htp.taskMail.pages.LoginPage;
+import by.htp.taskMail.pages.NewLetterPage;
 
 public class Steps {
 
@@ -22,11 +23,17 @@ public class Steps {
 	loginPage.openPage();
 	loginPage.login(username, password);
     }
-    
+
     public boolean isLoggedIn(String username) {
-		LoginPage loginPage = new LoginPage(driver);
-		String actualUsername = loginPage.getLoggedInUserName().trim().toLowerCase();
-		return actualUsername.equals(username);
-	}
+	LoginPage loginPage = new LoginPage(driver);
+	String actualUsername = loginPage.getLoggedInUserName().trim().toLowerCase();
+	return actualUsername.equals(username);
+    }
+    
+    public void sendLetter(String email, String topic, String message){
+	NewLetterPage newLetterPage = new NewLetterPage(driver);
+	newLetterPage.openPage();
+	newLetterPage.sendLetter(email, topic, message);
+    }
 
 }
