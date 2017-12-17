@@ -9,12 +9,13 @@ import by.htp.taskMail.steps.Steps;
 
 public class MailRuTest {
 
-    public static final String LOGIN = "kolya.boroda.tat5@mail.ru";
+    public static final String LOGIN = "viktar.balabushko.tat5@mail.ru";
     public static final String PASSWORD = "tatTAT5";
     
-    public static final String EMAIL_RECIPIENT = "kolya.snezhok@mail.ru";
-    public static final String TOPIC = "TAT5";
-    public static final String MESSAGE = "QQQQQQQQQQQQQQQQQQ";
+    public static final String EMAIL_RECIPIENT = "tathtp@mail.ru";
+    public static final String TOPIC = "JAVA TAT5";
+    public static final String MESSAGE = "Светлана, здравствуйте. Это ссылка на мой GitHub: "
+    	+ "\n" + "https://github.com/ViktarTAT";
     
     private Steps steps;
 
