@@ -9,10 +9,10 @@ import by.htp.taskMail.steps.Steps;
 
 public class MailRuTest {
 
-    public static final String LOGIN = "viktar.balabushko.tat5@mail.ru";
+    public static final String LOGIN = "kolya.boroda.tat5@mail.ru";
     public static final String PASSWORD = "tatTAT5";
     
-    public static final String EMAIL_RECIPIENT = "tathtp@mail.ru";
+    public static final String EMAIL_RECIPIENT = "viktar.balabushko.tat5@mail.ru"; //tathtp@mail.ru
     public static final String TOPIC = "JAVA TAT5";
     public static final String MESSAGE = "Светлана, здравствуйте. Это ссылка на мой GitHub: "
     	+ "\n" + "https://github.com/ViktarTAT";
@@ -34,6 +34,6 @@ public class MailRuTest {
     @Test(description = "Send Letter mail.ru", enabled = true)
     public void oneCanSendLetter() {
 	steps.loginMailRu(LOGIN, PASSWORD);
-	steps.sendLetter(EMAIL_RECIPIENT, TOPIC, MESSAGE);
+	Assert.assertTrue(steps.sendLetter(EMAIL_RECIPIENT, TOPIC, MESSAGE));	
     }
 }
