@@ -25,7 +25,7 @@ public class MailRuTest {
 	steps.initBrowser();
     }
 
-    @Test(description = "Login to Github", enabled = false)
+    @Test(description = "Login to mail.ru", enabled = false)
     public void oneCanLoginMailRu() {
 	steps.loginMailRu(LOGIN, PASSWORD);
 	Assert.assertTrue(steps.isLoggedIn(LOGIN));
