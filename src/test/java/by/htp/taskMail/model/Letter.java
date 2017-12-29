@@ -3,9 +3,13 @@ package by.htp.taskMail.model;
 public class Letter {
 	private String email;
 	private String topic;
-	private String Message;
+	private String message;
 
 	public Letter() {
+
+	}
+
+	public Letter(String email, String topic, String message) {
 
 	}
 
@@ -26,11 +30,11 @@ public class Letter {
 	}
 
 	public String getMessage() {
-		return Message;
+		return message;
 	}
 
 	public void setMessage(String message) {
-		Message = message;
+		this.message = message;
 	}
 
 }

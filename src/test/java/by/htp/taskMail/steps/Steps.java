@@ -6,6 +6,8 @@ import by.htp.taskMail.driver.ChromeCreator;
 import by.htp.taskMail.driver.DriverCreator;
 import by.htp.taskMail.driver.DriverFactory;
 import by.htp.taskMail.driver.MozilaFirefoxCreator;
+import by.htp.taskMail.model.Letter;
+import by.htp.taskMail.model.User;
 import by.htp.taskMail.pages.LoginPage;
 import by.htp.taskMail.pages.NewLetterPage;
 
@@ -22,10 +24,10 @@ public class Steps {
 		driver = null;
 	}
 
-	public void loginMailRu(String username, String password) {
+	public void loginMailRu(User user) {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.openPage();
-		loginPage.login(username, password);
+		loginPage.login(user);
 	}
 
 	public boolean isLoggedIn(String username) {
@@ -34,10 +36,10 @@ public class Steps {
 		return actualUsername.equals(username);
 	}
 
-	public boolean sendLetter(String email, String topic, String message) {
+	public boolean sendLetter(Letter letter) {
 		NewLetterPage newLetterPage = new NewLetterPage(driver);
 		newLetterPage.openPage();
-		newLetterPage.sendLetter(email, topic, message);
+		newLetterPage.sendLetter(letter);
 		return newLetterPage.isSend();
 	}
 
