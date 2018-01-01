@@ -16,7 +16,7 @@ public class Steps {
 	private WebDriver driver;
 
 	public void initBrowser() {
-		driver = DriverFactory.getInstanc("chome");
+		driver = DriverFactory.getInstanc("mozila");
 	}
 
 	public void closeDriver() {
@@ -36,9 +36,13 @@ public class Steps {
 		return actualUsername.equals(username);
 	}
 
+	public void openSendLetter() {
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.clickButtonNewLetter();
+	}
+
 	public boolean sendLetter(Letter letter) {
 		NewLetterPage newLetterPage = new NewLetterPage(driver);
-		newLetterPage.openPage();
 		newLetterPage.sendLetter(letter);
 		return newLetterPage.isSend();
 	}

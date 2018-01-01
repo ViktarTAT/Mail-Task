@@ -10,11 +10,12 @@ import by.htp.taskMail.model.User;
 public class LoginPage extends AbstractPage {
 
 	public static final String BASE_URL = "https://mail.ru";
-
+	
 	public static final String INPUT_LOGIN = "mailbox:login";
 	public static final String INPUT_PASSWORD = "mailbox:password";
 	public static final String BUTTON_SUBMIT = "//label[@id='mailbox:submit']/input";
 	public static final String LINK_USER = "//i[@id='PH_user-email']";
+	public static final String BUTTON_NEW_LETTER = "//i[@class='b-toolbar__btn js-shortcut']";
 
 	@FindBy(id = INPUT_LOGIN)
 	private WebElement inputLogin;
@@ -28,12 +29,14 @@ public class LoginPage extends AbstractPage {
 	@FindBy(xpath = LINK_USER)
 	private WebElement linkLoggedInUser;
 
+	@FindBy(xpath = BUTTON_NEW_LETTER)
+	private WebElement buttonNewLetter;
+
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(this.driver, this);
 	}
 
-	@Override
 	public void openPage() {
 		driver.get(BASE_URL);
 	}
@@ -46,8 +49,11 @@ public class LoginPage extends AbstractPage {
 		buttonSubmit.click();
 	}
 
+	public void clickButtonNewLetter() {
+		buttonNewLetter.click();
+	}
+
 	public String getLoggedInUserName() {
 		return linkLoggedInUser.getText();
 	}
-
 }

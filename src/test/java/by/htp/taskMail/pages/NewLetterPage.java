@@ -9,8 +9,6 @@ import by.htp.taskMail.model.Letter;
 
 public class NewLetterPage extends AbstractPage {
 
-	public static final String BASE_URL_1 = "https://e.mail.ru/compose/";
-
 	public static final String INPUT_WHOM = "//span[text()='Кому']/following::textarea[2]";
 	public static final String INPUT_TOPIC = "//input[@class='b-input']"; // "//span[text()='Тема']/following::textarea[1]";
 	public static final String INPUT_MESSAGE = "//div[@class='compose__editor__container']/table//td[@class='cell shell__text_cell w100']//iframe"; // "//div[@class='compose__editor__frame']";//
@@ -37,18 +35,6 @@ public class NewLetterPage extends AbstractPage {
 	public NewLetterPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(this.driver, this);
-	}
-
-	@Override
-	public void openPage() {
-		try {
-			Thread.sleep(10000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		driver.get(BASE_URL_1);
-
-		System.out.println("open page");
 	}
 
 	public void sendLetter(Letter letter) {

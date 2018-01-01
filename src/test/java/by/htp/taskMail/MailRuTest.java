@@ -33,6 +33,7 @@ public class MailRuTest {
 	@Test(description = "Send Letter mail.ru", priority = 2, enabled = true)
 	public void oneCanSendLetter() {
 		steps.loginMailRu(user);
+		steps.openSendLetter();
 		LetterFactory letterFactory = new LetterFactory();
 		Letter letter = letterFactory.getFullLetter();
 		Assert.assertTrue(steps.sendLetter(letter));
