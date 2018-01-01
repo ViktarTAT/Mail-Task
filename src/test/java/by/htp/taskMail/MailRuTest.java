@@ -20,14 +20,12 @@ public class MailRuTest {
 	public void setUp() {
 		steps = new Steps();
 		steps.initBrowser();
-		user = UserFactory.getUser();
+		UserFactory userFactory = new UserFactory();
+		user = userFactory.getUser();
 	}
 	
 	@Test(description = "Login to mail.ru", priority = 1, enabled = false)
 	public void oneCanLoginMailRu() {
-		
-//		String login = user.getLogin();
-//		String password = user.getPassword();
 		steps.loginMailRu(user);
 		Assert.assertTrue(steps.isLoggedIn(user.getLogin()));
 	}
@@ -35,7 +33,8 @@ public class MailRuTest {
 	@Test(description = "Send Letter mail.ru", priority = 2, enabled = true)
 	public void oneCanSendLetter() {
 		steps.loginMailRu(user);
-		Letter letter = LetterFactory.getFullLetter();
+		LetterFactory letterFactory = new LetterFactory();
+		Letter letter = letterFactory.getFullLetter();
 		Assert.assertTrue(steps.sendLetter(letter));
 	}
 }

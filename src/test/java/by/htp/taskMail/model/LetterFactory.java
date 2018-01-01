@@ -1,20 +1,32 @@
 package by.htp.taskMail.model;
 
-public class LetterFactory {
-	
-	public static final String EMAIL_RECIPIENT = "viktar.balabushko.tat5@mail.ru"; //tathtp@mail.ru
-    public static final String TOPIC = "JAVA TAT5";
-    public static final String MESSAGE = "Светлана, здравствуйте. Это ссылка на мой GitHub: "
-    	+ "\n" + "https://github.com/ViktarTAT";
+import by.htp.taskMail.utils.ResourceManager;
 
-	public static Letter getFullLetter() {
-		return new Letter(EMAIL_RECIPIENT, TOPIC, MESSAGE);
+public class LetterFactory {
+
+	private String emailRecipient;
+	private String topic;
+	private String message;
+
+	public LetterFactory() {
+		initDataFactory();
 	}
-	
-	public static Letter getLetterWhithoutTopic() {
-		Letter letter= new Letter();
-		letter.setEmail(EMAIL_RECIPIENT);
-		letter.setMessage(MESSAGE);
+
+	public Letter getFullLetter() {
+		return new Letter(emailRecipient, topic, message);
+	}
+
+	public Letter getLetterWhithoutTopic() {
+		Letter letter = new Letter();
+		letter.setEmail(emailRecipient);
+		letter.setMessage(message);
 		return new Letter();
+	}
+
+	private void initDataFactory() {
+		ResourceManager manager = ResourceManager.INSTANCE;
+		emailRecipient = manager.getString("letter.email");
+		topic = manager.getString("letter.topic");
+		message = manager.getString("letter.message");
 	}
 }
