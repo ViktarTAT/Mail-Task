@@ -4,14 +4,16 @@ import org.openqa.selenium.WebDriver;
 
 public class DriverFactory {
 	
-	public static WebDriver getInstanc(String nameDriver){
+	public static WebDriver getInstanc(String nameDriverString){
 		DriverCreator creator = null;
 		
+		NameDriver nameDriver = NameDriver.valueOf(nameDriverString.toUpperCase());
+		
 		switch(nameDriver){
-		case "chrome":
+		case CHROME:
 			creator = new ChromeCreator();
 			break;
-		case "mozile":
+		case MOZILLA:
 			creator = new MozilaFirefoxCreator();
 			break;
 		default:
@@ -20,4 +22,9 @@ public class DriverFactory {
 		
 		return creator.createDriver();
 	}	
+}
+
+enum NameDriver {
+	CHROME,
+	MOZILLA
 }

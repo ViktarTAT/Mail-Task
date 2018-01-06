@@ -5,10 +5,10 @@ import java.util.ResourceBundle;
 public enum ResourceManager {
 	INSTANCE;
 	private ResourceBundle resourceBundle;
-	private static final String FILE_PATH = "c:/eclipse-workspace/TaskMailsrc/test/resources/testData.properties";
+	private static final String RESOURCE_NAME = "testData";
 	
 	private ResourceManager() {
-		resourceBundle = ResourceBundle.getBundle(FILE_PATH);
+		resourceBundle = ResourceBundle.getBundle(RESOURCE_NAME);
 	}
 
 	public String getString(String key) {

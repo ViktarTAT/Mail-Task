@@ -20,7 +20,7 @@ public class LetterFactory {
 		Letter letter = new Letter();
 		letter.setEmail(emailRecipient);
 		letter.setMessage(message);
-		return new Letter();
+		return letter;
 	}
 
 	private void initDataFactory() {

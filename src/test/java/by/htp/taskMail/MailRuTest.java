@@ -3,6 +3,7 @@ package by.htp.taskMail;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import by.htp.taskMail.model.Letter;
@@ -17,9 +18,10 @@ public class MailRuTest {
 	private User user;
 
 	@BeforeMethod(description = "Init browser")
-	public void setUp() {
+	@Parameters("browser")
+	public void setUp(String browser) {
 		steps = new Steps();
-		steps.initBrowser();
+		steps.initBrowser(browser);
 		UserFactory userFactory = new UserFactory();
 		user = userFactory.getUser();
 	}

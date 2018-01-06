@@ -15,7 +15,7 @@ public class LoginPage extends AbstractPage {
 	public static final String INPUT_PASSWORD = "mailbox:password";
 	public static final String BUTTON_SUBMIT = "//label[@id='mailbox:submit']/input";
 	public static final String LINK_USER = "//i[@id='PH_user-email']";
-	public static final String BUTTON_NEW_LETTER = "//i[@class='b-toolbar__btn js-shortcut']";
+	public static final String BUTTON_NEW_LETTER = "//A[@class='b-toolbar__btn js-shortcut']";
 
 	@FindBy(id = INPUT_LOGIN)
 	private WebElement inputLogin;

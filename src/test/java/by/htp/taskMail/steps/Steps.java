@@ -15,8 +15,8 @@ public class Steps {
 
 	private WebDriver driver;
 
-	public void initBrowser() {
-		driver = DriverFactory.getInstanc("mozila");
+	public void initBrowser(String browser) {
+		driver = DriverFactory.getInstanc(browser);
 	}
 
 	public void closeDriver() {

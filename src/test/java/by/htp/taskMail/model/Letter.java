@@ -10,7 +10,9 @@ public class Letter {
 	}
 
 	public Letter(String email, String topic, String message) {
-
+		this.email = email;
+		this.topic = topic;
+		this.message = message;
 	}
 
 	public String getEmail() {

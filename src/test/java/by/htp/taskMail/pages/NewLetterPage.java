@@ -4,16 +4,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import by.htp.taskMail.model.Letter;
 
 public class NewLetterPage extends AbstractPage {
 
-	public static final String INPUT_WHOM = "//span[text()='Кому']/following::textarea[2]";
-	public static final String INPUT_TOPIC = "//input[@class='b-input']"; // "//span[text()='Тема']/following::textarea[1]";
-	public static final String INPUT_MESSAGE = "//div[@class='compose__editor__container']/table//td[@class='cell shell__text_cell w100']//iframe"; // "//div[@class='compose__editor__frame']";//
-																																					// *[@id='tinymce']";
-	public static final String BUTTON_SEND = "//div[@class='b-toolbar__btn b-toolbar__btn_ b-toolbar__btn_false js-shortcut']";
+	public static final String INPUT_WHOM = "//textarea[@data-original-name='To']";
+	public static final String INPUT_TOPIC = "//input[@class='b-input']";
+	public static final String INPUT_MESSAGE = "//div[@class='compose__editor__container']/table//td[@class='cell shell__text_cell w100']//iframe";
+																																					
+	public static final String BUTTON_SEND = "//div[@data-name='send']";
 	public static final String LINK_USER = "message-sent__title";
 	public static final String LINK_SEND = "Ваше письмо отправлено. Перейти во Входящие";
 
@@ -42,10 +44,14 @@ public class NewLetterPage extends AbstractPage {
 		String topic = letter.getTopic();
 		String message = letter.getMessage();
 
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOf(inputWhom));
+		
 		inputWhom.sendKeys(email);
 		inputTopic.sendKeys(topic);
 		inputMessage.sendKeys(message);
 		buttonSubmit.click();
+
 	}
 
 	public boolean isSend() {
