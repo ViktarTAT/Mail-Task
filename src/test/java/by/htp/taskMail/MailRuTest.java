@@ -1,6 +1,7 @@
 package by.htp.taskMail;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -26,7 +27,7 @@ public class MailRuTest {
 		user = userFactory.getUser();
 	}
 	
-	@Test(description = "Login to mail.ru", priority = 1, enabled = false)
+	@Test(description = "Login to mail.ru", priority = 1, enabled = true)
 	public void oneCanLoginMailRu() {
 		steps.loginMailRu(user);
 		Assert.assertTrue(steps.isLoggedIn(user.getLogin()));
@@ -40,4 +41,11 @@ public class MailRuTest {
 		Letter letter = letterFactory.getFullLetter();
 		Assert.assertTrue(steps.sendLetter(letter));
 	}
+	
+	@AfterMethod
+	public void setDown(){
+	    steps.closeDriver();
+	}
+	
+	
 }

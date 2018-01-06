@@ -17,6 +17,7 @@ public class Steps {
 
 	public void initBrowser(String browser) {
 		driver = DriverFactory.getInstanc(browser);
+		driver.manage().window().maximize();
 	}
 
 	public void closeDriver() {
