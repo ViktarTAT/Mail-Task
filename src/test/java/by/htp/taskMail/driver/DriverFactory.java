@@ -16,8 +16,6 @@ public class DriverFactory {
 		case MOZILLA:
 			creator = new MozilaFirefoxCreator();
 			break;
-		default:
-			creator = new MozilaFirefoxCreator();
 		}
 		
 		return creator.createDriver();
