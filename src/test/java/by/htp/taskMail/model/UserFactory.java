@@ -1,6 +1,6 @@
 package by.htp.taskMail.model;
 
-import by.htp.taskMail.utils.ResourceManager;
+import by.htp.taskMail.util.ResourceManager;
 
 public class UserFactory {
 

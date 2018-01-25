@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 
 public class ChromeCreator implements DriverCreator {
 	
-	public final static String DRIVER_PATH = "C:/driver/chromedriver.exe";
+	public final static String DRIVER_PATH = "C:/driver/chromedriver.exe"; //src/test/resources
 
 	@Override
 	public WebDriver createDriver() {

@@ -1,4 +1,4 @@
-package by.htp.taskMail.pages;
+package by.htp.taskMail.page;
 
 import org.openqa.selenium.WebDriver;
 

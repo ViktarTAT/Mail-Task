@@ -1,15 +1,12 @@
-package by.htp.taskMail.steps;
+package by.htp.taskMail.step;
 
 import org.openqa.selenium.WebDriver;
 
-import by.htp.taskMail.driver.ChromeCreator;
-import by.htp.taskMail.driver.DriverCreator;
 import by.htp.taskMail.driver.DriverFactory;
-import by.htp.taskMail.driver.MozilaFirefoxCreator;
 import by.htp.taskMail.model.Letter;
 import by.htp.taskMail.model.User;
-import by.htp.taskMail.pages.LoginPage;
-import by.htp.taskMail.pages.NewLetterPage;
+import by.htp.taskMail.page.LoginPage;
+import by.htp.taskMail.page.NewLetterPage;
 
 public class Steps {
 

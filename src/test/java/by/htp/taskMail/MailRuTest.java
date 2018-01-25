@@ -2,7 +2,6 @@ package by.htp.taskMail;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -11,7 +10,7 @@ import by.htp.taskMail.model.Letter;
 import by.htp.taskMail.model.LetterFactory;
 import by.htp.taskMail.model.User;
 import by.htp.taskMail.model.UserFactory;
-import by.htp.taskMail.steps.Steps;
+import by.htp.taskMail.step.Steps;
 
 public class MailRuTest {
 

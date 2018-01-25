@@ -1,4 +1,4 @@
-package by.htp.taskMail.utils;
+package by.htp.taskMail.util;
 
 import java.util.ResourceBundle;
 
