@@ -43,7 +43,7 @@ public class MailRuTest {
 	
 	@AfterMethod
 	public void setDown(){
-	    steps.closeDriver();
+	    steps.closeBrowser();
 	}
 	
 	
