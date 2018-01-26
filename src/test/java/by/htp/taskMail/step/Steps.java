@@ -33,15 +33,18 @@ public class Steps {
 	LoginPage loginPage = new LoginPage(driver);
 	LOG.info("open: 'loginPage'");
 	loginPage.openPage();
-	LOG.info("enter: " + user.toString());
+	LOG.warn("enter: " + user.toString());
 	loginPage.login(user);
 	LOG.info("finish: 'loginMailRu'");
     }
 
     public boolean isLoggedIn(String username) {
+	LOG.debug("start: 'isLoggedIn'");
 	LoginPage loginPage = new LoginPage(driver);
 	String actualUsername = loginPage.getLoggedInUserName().trim().toLowerCase();
-	return actualUsername.equals(username);
+	boolean result = actualUsername.equals(username);
+	LOG.warn("finish: 'isLoggedIn' result = " + result);
+	return result;
     }
 
     public void openSendLetter() {
